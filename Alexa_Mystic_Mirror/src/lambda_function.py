@@ -29,8 +29,8 @@ sns = boto3.client('sns')
 s3 = boto3.client('s3')
 
 #user defined variables
-TopicARN = '<Change this to the topic ARN for SNS topic>'
-bucket = "<Change this to your bucket name>" 
+TopicARN = 'arn:aws:sns:us-east-1:699346703730:Magic_Mirror_MQTT'
+bucket = "mysticbucket" 
 
 def lambda_handler(event, context):
     """ Route the incoming request based on type (LaunchRequest, IntentRequest,
@@ -45,7 +45,7 @@ def lambda_handler(event, context):
     function.
     """
     if (event['session']['application']['applicationId'] !=
-             "<Enter Your App ID>"):
+             "amzn1.ask.skill.8af6a9f8-63b2-4199-a07b-b38e4933742e"):
          return wrong_AppID()
          
 

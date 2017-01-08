@@ -25,18 +25,18 @@
 
  
   
-var email = '<ENTER THE EMAIL ADDRESS YOU USED FOR AUTHENTICATION - in lower case>'  
+var email = 'raajeshkr89@gmail.com'  
 var time = moment.utc();
 var dateStamp = time.format('YYYYMMDD');
 var amzdate = dateStamp + 'T' + time.format('HHmmss') + 'Z';
 var service = 'iotdevicegateway';
 var region = 'us-east-1'; //change the region if you are not using US-East
-var secretKey = '<ENTER YOUR SECRET KEY>';
-var accessKey = '<ENTER YOUR ACCESS KEY>';
+var secretKey = '4cLjcGGJBQ82fYha9hsLDwVNtLnox7dyrkk2hkJD';
+var accessKey = 'AKIAJ7RJV5RYNSUTWNTA';
 var algorithm = 'AWS4-HMAC-SHA256';
 var method = 'GET';
 var canonicalUri = '/mqtt';
-var host = '<ENTER THE HOST ADDRESS - should look like - a6i0a3yz21r4k2.iot.us-east-1.amazonaws.com>'
+var host = 'a7zkvyb0e2ca6.iot.us-east-1.amazonaws.com'
 
 var credentialScope = dateStamp + '/' + region + '/' + service + '/' + 'aws4_request';
 var canonicalQuerystring = 'X-Amz-Algorithm=AWS4-HMAC-SHA256';

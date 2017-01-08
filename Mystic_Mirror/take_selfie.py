@@ -16,7 +16,7 @@ import json
 import tinys3
 
 #update with the email address used when you linked the Mystic Mirror skill to your Google account
-email = '<ENTER THE EMAIL ADDRESS YOU USED FOR AUTHENTICATION - in lower case>'
+email = 'raajeshkr89@gmail.com'
 s3_bucket = 'mysticmirror' #change this if you plan to use your own Alexa skill and IoT
 
 def on_connect(client, userdata, flags, rc):
@@ -51,8 +51,8 @@ def on_message(client, userdata, msg):
             
             #use tinyS3 to upload the photo to AWS S3
             #Note this key only allows write access to the mysticmirror bucket; contact Darian Johnson for the key for this access
-            S3_SECRET_KEY = '<ENTER YOUR SECRET KEY>' 
-            S3_ACCESS_KEY = '<ENTER YOUR ACCESS KEY>'
+            S3_SECRET_KEY = '4cLjcGGJBQ82fYha9hsLDwVNtLnox7dyrkk2hkJD' 
+            S3_ACCESS_KEY = 'AKIAJ7RJV5RYNSUTWNTA'
             
             conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,tls=True)
             f = open(photo,'rb')
@@ -78,9 +78,9 @@ awshost = "data.iot.us-east-1.amazonaws.com"
 awsport = 8883
 clientId = "MyMagicMirror-" + str(uuid.uuid4())
 thingName = "MyMagicMirror"
-caPath = "ENTER THE LOCATION OF YOUR *CERT.PEM FILE" #SUCH AS "/home/pi/certs/verisign-cert.pem"
-certPath = "ENTER THE LOCATION OF YOUR *PEM.CRT FILE" #SUCH AS "/home/pi/certs/certificate.pem.crt"
-keyPath = "ENTER THE LOCATION OF YOUR RIVATE PEM.KEY" #SUCH AS "/home/pi/certs/private.pem.key"
+caPath = "/home/pi/certs/verisign-cert.pem" #SUCH AS "/home/pi/certs/verisign-cert.pem"
+certPath = "/home/pi/certs/certificate.pem.crt" #SUCH AS "/home/pi/certs/certificate.pem.crt"
+keyPath = "/home/pi/certs/private.pem.key" #SUCH AS "/home/pi/certs/private.pem.key"
 
 mqttc.tls_set(caPath, certfile=certPath, keyfile=keyPath, cert_reqs=ssl.CERT_REQUIRED, tls_version=ssl.PROTOCOL_TLSv1_2, ciphers=None)
 
