@@ -51,8 +51,8 @@ def on_message(client, userdata, msg):
             
             #use tinyS3 to upload the photo to AWS S3
             #Note this key only allows write access to the mysticmirror bucket; contact Darian Johnson for the key for this access
-            S3_SECRET_KEY = '4cLjcGGJBQ82fYha9hsLDwVNtLnox7dyrkk2hkJD' 
-            S3_ACCESS_KEY = 'AKIAJ7RJV5RYNSUTWNTA'
+            S3_SECRET_KEY = '<Enter Secret Access Key>' 
+            S3_ACCESS_KEY = '<Enter Access Key>'
             
             conn = tinys3.Connection(S3_ACCESS_KEY,S3_SECRET_KEY,tls=True)
             f = open(photo,'rb')
